@@ -1,10 +1,9 @@
-import { useContext } from "react";
-import { ThemeContext } from './App';
 import Tools from './Tools';
+import {useTheme} from './ThemeContext';
 
 function FunctionComponent()
 {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useTheme();
 
   return (
     <div className={Tools.clsName} style={Tools.getStyle(themeContext)}>

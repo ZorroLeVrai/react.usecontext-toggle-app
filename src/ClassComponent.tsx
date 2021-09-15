@@ -1,11 +1,13 @@
 import React from 'react';
-import { ThemeContext } from './App';
+import {getThemeContext} from './ThemeContext';
 import Tools from './Tools';
 
 class ClassComponent extends React.Component
 {
   render()
   {
+    const ThemeContext = getThemeContext();
+
     return (
       <ThemeContext.Consumer>
         {
