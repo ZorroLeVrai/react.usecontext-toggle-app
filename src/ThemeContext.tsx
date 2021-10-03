@@ -1,5 +1,6 @@
 import React, { useState, useContext } from 'react';
 
+//the parameter passed is the default value / function to executed if we are outside of the context provider
 const ThemeContext = React.createContext(true);
 const ThemeUpdateContext = React.createContext(()=>{ console.log("ThemeUpdateContext not initialized")});
 
