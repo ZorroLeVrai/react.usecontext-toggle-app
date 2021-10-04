@@ -1,8 +1,22 @@
 import React, { useState, useContext } from 'react';
 
-//the parameter passed is the default value / function to executed if we are outside of the context provider
-const ThemeContext = React.createContext(true);
-const ThemeUpdateContext = React.createContext(()=>{ console.log("ThemeUpdateContext not initialized")});
+//the parameter passed is the default value / function to be executed if we are outside of the context provider
+//React.createContext(true);
+const ThemeContext = createContext("ThemeContext", true);
+//React.createContext(()=>{ console.log("ThemeUpdateContext is not initialized")});
+const ThemeUpdateContext = createContextUpdate<void>("ThemeContext");
+
+function createContext<T>(name: string, initValue: T)
+{
+  let context = React.createContext(initValue);
+  context.displayName = name;
+  return context;
+}
+
+function createContextUpdate<T>(name: string)
+{
+  return createContext(name, (value: T) => { console.log(`${name} is not initialized`)});
+}
 
 type PropType = {
   children: React.ReactNode

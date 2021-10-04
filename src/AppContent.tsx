@@ -8,7 +8,7 @@ function AppContent()
 
   return (
     <>
-      <button onClick={toggleTheme}>Toggle theme</button>
+      <button onClick={() => toggleTheme()}>Toggle theme</button>
       <FunctionComponent/>
       <ClassComponent/>
     </>
